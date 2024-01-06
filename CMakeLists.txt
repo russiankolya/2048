@@ -9,6 +9,8 @@ set(SOURCES "src/main.cpp"
             "src/AppGame.cpp"
             "src/Tile.cpp"
             "src/Board.cpp"
-            "src/Random.cpp")
+            "src/Random.cpp"
+            "src/Game.cpp"
+)
 
 add_app("${SOURCES}")
