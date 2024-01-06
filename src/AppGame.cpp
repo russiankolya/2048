@@ -1,6 +1,6 @@
 #include "AppGame.h"
 
-#define WINDOW_WIDTH  600
+#define WINDOW_WIDTH  400
 #define WINDOW_HEIGHT 400
 
 AppGame::AppGame() {
@@ -14,11 +14,10 @@ AppGame::AppGame() {
     /// kWindowFlags_Resizable.
     ///
     window_ = Window::Create(app_->main_monitor(), WINDOW_WIDTH, WINDOW_HEIGHT,
-                             false, kWindowFlags_Titled | kWindowFlags_Resizable);
+                             false, kWindowFlags_Titled);
 
     ///
-    /// Create our HTML overlay-- we don't care about its initial size and
-    /// position because it'll be calculated when we call OnResize() below.
+    /// Create our HTML overlay
     ///
     overlay_ = Overlay::Create(window_, window_->width(), window_->height(), 0, 0);
 

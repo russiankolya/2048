@@ -1,10 +1,12 @@
 body {
-    background-color: lightcoral;
-    font-family: -apple-system, 'Segoe UI Light', Ubuntu, Arial, sans-serif;
-
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: aliceblue;
+    font-family: -apple-system, 'Segoe UI Light', Ubuntu, Arial, sans-serif;
+
+    margin: 0.5vmin;
 }
 
 .board {
@@ -17,12 +19,13 @@ body {
 }
 
 .tile {
-    width: 100px;
-    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    margin: 10px;
+    margin: 1.5vmin;
 
-    border-radius: 10px;
+    border-radius: 3vmin;
 
-    background-color: aqua;
+    background-color: white;
 }
