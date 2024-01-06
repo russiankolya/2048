@@ -14,7 +14,18 @@ for (let i = 0; i < SIZE; i++) {
         tile.setAttribute("id", tile_id);
         tile.setAttribute("class", "tile");
 
+        tile.style.width = String((100 - (3 * SIZE)) / SIZE - 1) + "vmin";
+        tile.style.height = String((100 - (3 * SIZE)) / SIZE - 1) + "vmin";
+
         row.appendChild(tile);
     }
     board.appendChild(row);
 }
+
+function UpdateTile(i, j, value, color) {
+    let tile = document.getElementById("tile" + i + j)
+    tile.innerHTML = String(value);
+    tile.style.backgroundColor = color;
+}
+
+UpdateTile(0, 0, 1, "gainsboro");
