@@ -1,4 +1,28 @@
 body {
     background-color: lightcoral;
     font-family: -apple-system, 'Segoe UI Light', Ubuntu, Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+}
+
+.board-row {
+    display: flex;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+
+    margin: 10px;
+
+    border-radius: 10px;
+
+    background-color: aqua;
 }
