@@ -5,8 +5,8 @@ project(2048 C CXX)
 
 include(cmake/App.cmake)
 
-set(SOURCES "src/Game.h"
+set(SOURCES "src/main.cpp"
             "src/Game.cpp"
-            "src/main.cpp")
+            "src/Tile.cpp")
 
 add_app("${SOURCES}")
