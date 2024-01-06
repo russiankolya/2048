@@ -28,4 +28,4 @@ function UpdateTile(i, j, value, color) {
     tile.style.backgroundColor = color;
 }
 
-UpdateTile(0, 0, 1, "gainsboro");
+UpdateTile(0, 0, 1, "white");

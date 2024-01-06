@@ -1,7 +1,7 @@
 #include "Board.h"
 
 #define SIZE 4
-#define DEFAULT_COLOR "#000000"
+#define DEFAULT_COLOR "#f1f1f1"
 
 Board::Board() {
     board.assign(SIZE, std::vector<Tile>(SIZE));
