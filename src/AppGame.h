@@ -43,8 +43,12 @@ public:
     void OnChangeTitle(ultralight::View *caller,
                        const String &title) override;
 
+    void UpdateTile(int i, int j, int32_t value, const String &color);
+
 protected:
     RefPtr<App> app_;
     RefPtr<Window> window_;
     RefPtr<Overlay> overlay_;
+
+    JSFunction updateTile;
 };

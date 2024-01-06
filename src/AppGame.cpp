@@ -61,8 +61,6 @@ void AppGame::OnUpdate() {
     ///
     /// This is called repeatedly from the application's update loop.
     ///
-    /// You should update any app logic here.
-    ///
 }
 
 void AppGame::OnClose(ultralight::Window *window) {
@@ -94,8 +92,13 @@ void AppGame::OnDOMReady(ultralight::View *caller,
     ///
     /// This is called when a frame's DOM has finished loading on the page.
     ///
-    /// This is the best time to setup any JavaScript bindings.
-    ///
+
+    RefPtr<JSContext> locked_context = overlay_->view()->LockJSContext();
+    SetJSContext(locked_context->ctx());
+
+    JSObject global = JSGlobalObject();
+
+    updateTile = global["updateTile"];
 }
 
 void AppGame::OnChangeCursor(ultralight::View *caller,
@@ -116,4 +119,8 @@ void AppGame::OnChangeTitle(ultralight::View *caller,
     /// We update the main window's title here.
     ///
     window_->SetTitle(title.utf8().data());
+}
+
+void AppGame::UpdateTile(int i, int j, int32_t value, const String &color) {
+    updateTile({i, j, value, color});
 }

@@ -22,10 +22,10 @@ for (let i = 0; i < SIZE; i++) {
     board.appendChild(row);
 }
 
-function UpdateTile(i, j, value, color) {
+function updateTile(i, j, value, color) {
     let tile = document.getElementById("tile" + i + j)
     tile.innerHTML = String(value);
     tile.style.backgroundColor = color;
 }
 
-UpdateTile(0, 0, 1, "white");
+updateTile(0, 0, 1, "white");
