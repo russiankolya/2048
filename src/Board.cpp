@@ -14,6 +14,10 @@ Board::Board() {
 
 Board::~Board() = default;
 
+size_t Board::GetSize() const {
+    return board.size();
+}
+
 std::vector<Tile> &Board::operator[](size_t i) {
     return board[i];
 }
