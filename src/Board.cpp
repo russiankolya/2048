@@ -5,8 +5,8 @@
 
 Board::Board() {
     board.assign(SIZE, std::vector<Tile>(SIZE));
-    for (int i = 0; i < SIZE; i++) {
-        for (int j = 0; j < SIZE; j++) {
+    for (size_t i = 0; i < SIZE; i++) {
+        for (size_t j = 0; j < SIZE; j++) {
             board[i][j] = Tile(0, DEFAULT_COLOR);
         }
     }
