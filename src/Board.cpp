@@ -14,7 +14,7 @@ Board::Board() {
 
 Board::~Board() = default;
 
-size_t Board::GetSize() const {
+size_t Board::size() const {
     return board.size();
 }
 
