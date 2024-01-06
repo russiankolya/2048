@@ -14,10 +14,10 @@ Board::Board() {
 
 Board::~Board() = default;
 
-std::vector<Tile> &Board::operator[](int i) {
+std::vector<Tile> &Board::operator[](size_t i) {
     return board[i];
 }
 
-const std::vector<Tile> &Board::operator[](int i) const {
+const std::vector<Tile> &Board::operator[](size_t i) const {
     return board[i];
 }
