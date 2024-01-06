@@ -3,14 +3,14 @@
 
 using namespace ultralight;
 
-class Game : public AppListener,
-             public WindowListener,
-             public LoadListener,
-             public ViewListener {
+class AppGame : public AppListener,
+                public WindowListener,
+                public LoadListener,
+                public ViewListener {
 public:
-    Game();
+    AppGame();
 
-    ~Game() override;
+    ~AppGame() override;
 
     // Start the run loop.
     virtual void Run();
