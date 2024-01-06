@@ -27,5 +27,3 @@ function updateTile(i, j, value, color) {
     tile.innerHTML = String(value);
     tile.style.backgroundColor = color;
 }
-
-updateTile(0, 0, 1, "white");

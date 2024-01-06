@@ -61,6 +61,14 @@ void AppGame::OnUpdate() {
     ///
     /// This is called repeatedly from the application's update loop.
     ///
+    for (size_t i = 0; i < game.data().size(); i++) {
+        for (size_t j = 0; j < game.data().size(); j++) {
+            if (game.data()[i][j].GetValue() != 0) {
+                UpdateTile(static_cast<int>(i), static_cast<int>(j), game.data()[i][j].GetValue(),
+                           game.data()[i][j].GetColor());
+            }
+        }
+    }
 }
 
 void AppGame::OnClose(ultralight::Window *window) {

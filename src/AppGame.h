@@ -1,5 +1,6 @@
 #pragma once
 #include <AppCore/AppCore.h>
+#include "Game.h"
 
 using namespace ultralight;
 
@@ -49,6 +50,8 @@ protected:
     RefPtr<App> app_;
     RefPtr<Window> window_;
     RefPtr<Overlay> overlay_;
+
+    Game game{};
 
     JSFunction updateTile;
 };

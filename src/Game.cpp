@@ -4,6 +4,14 @@ Game::Game() = default;
 
 Game::~Game() = default;
 
+Board &Game::data() {
+    return board;
+}
+
+Board Game::data() const {
+    return board;
+}
+
 void Game::MoveUp() {
     for (size_t i = 0; i < board.size(); i++) {
         for (size_t j = 0; j < board.size(); j++) {

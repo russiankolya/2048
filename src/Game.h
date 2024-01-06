@@ -9,6 +9,10 @@ public:
 
     ~Game();
 
+    Board& data();
+
+    Board data() const;
+
     void MoveLeft();
 
     void MoveUp();
@@ -16,8 +20,6 @@ public:
     void MoveRight();
 
     void MoveDown();
-
-    void UpdateTable();
 
 private:
     Board board;
