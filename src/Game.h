@@ -12,8 +12,6 @@ public:
 
     Board& data();
 
-    Board data() const;
-
     bool MoveLeft();
 
     bool MoveUp();

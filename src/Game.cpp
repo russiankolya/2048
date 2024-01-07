@@ -29,7 +29,6 @@ bool Game::MoveLeft() {
                     board[i][k].SetValue(board[i][j].GetValue() + board[i][k].GetValue());
                     merged.insert({i, k});
                     board[i][j].SetValue(0);
-                    board[i][j].SetColor("#f1f1f1");
                     is_merged = true;
                     break;
                 } else {
@@ -43,9 +42,7 @@ bool Game::MoveLeft() {
             if (j != new_pos) {
                 is_moved = true;
                 board[i][new_pos].SetValue(board[i][j].GetValue());
-                board[i][new_pos].SetColor("white");
                 board[i][j].SetValue(0);
-                board[i][j].SetColor("#f1f1f1");
             }
         }
     }
@@ -71,7 +68,6 @@ bool Game::MoveUp() {
                     board[k][j].SetValue(board[i][j].GetValue() + board[k][j].GetValue());
                     merged.insert({k, j});
                     board[i][j].SetValue(0);
-                    board[i][j].SetColor("#f1f1f1");
                     is_merged = true;
                     break;
                 } else {
@@ -85,9 +81,7 @@ bool Game::MoveUp() {
             if (i != new_pos) {
                 is_moved = true;
                 board[new_pos][j].SetValue(board[i][j].GetValue());
-                board[new_pos][j].SetColor("white");
                 board[i][j].SetValue(0);
-                board[i][j].SetColor("#f1f1f1");
             }
         }
     }
@@ -113,7 +107,6 @@ bool Game::MoveRight() {
                     board[i][k].SetValue(board[i][j].GetValue() + board[i][k].GetValue());
                     merged.insert({i, k});
                     board[i][j].SetValue(0);
-                    board[i][j].SetColor("#f1f1f1");
                     is_merged = true;
                     break;
                 } else {
@@ -127,9 +120,7 @@ bool Game::MoveRight() {
             if (j != new_pos) {
                 is_moved = true;
                 board[i][new_pos].SetValue(board[i][j].GetValue());
-                board[i][new_pos].SetColor("white");
                 board[i][j].SetValue(0);
-                board[i][j].SetColor("#f1f1f1");
             }
         }
     }
@@ -155,7 +146,6 @@ bool Game::MoveDown() {
                     board[k][j].SetValue(board[i][j].GetValue() + board[k][j].GetValue());
                     merged.insert({k, j});
                     board[i][j].SetValue(0);
-                    board[i][j].SetColor("#f1f1f1");
                     is_merged = true;
                     break;
                 } else {
@@ -169,9 +159,7 @@ bool Game::MoveDown() {
             if (i != new_pos) {
                 is_moved = true;
                 board[new_pos][j].SetValue(board[i][j].GetValue());
-                board[new_pos][j].SetColor("white");
                 board[i][j].SetValue(0);
-                board[i][j].SetColor("#f1f1f1");
             }
         }
     }

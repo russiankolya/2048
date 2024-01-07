@@ -36,5 +36,4 @@ void Random::FillRandomTile(Board &board) {
     } else {
         tile->SetValue(2);
     }
-    tile->SetColor("white");
 }

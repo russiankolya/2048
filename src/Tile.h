@@ -9,8 +9,6 @@ class Tile {
 public:
     Tile();
 
-    Tile(int32_t value, const String& color);
-
     ~Tile();
 
     int32_t GetValue() const;
@@ -18,8 +16,6 @@ public:
     String GetColor() const;
 
     void SetValue(int32_t value_);
-
-    void SetColor(const String &color_);
 
 private:
     int32_t value{};
