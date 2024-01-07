@@ -103,7 +103,7 @@ bool Game::MoveRight() {
             for (size_t k = j + 1; k < board.size(); k++) {
                 if (board[i][k].GetValue() == 0) {
                     new_pos = k;
-                } else if (board[i][j].GetValue() == board[i][k].GetValue()  && !merged.count({i, k})) {
+                } else if (board[i][j].GetValue() == board[i][k].GetValue() && !merged.count({i, k})) {
                     board[i][k].SetValue(board[i][j].GetValue() + board[i][k].GetValue());
                     merged.insert({i, k});
                     board[i][j].SetValue(0);
@@ -142,7 +142,7 @@ bool Game::MoveDown() {
             for (size_t k = i + 1; k < board.size(); k++) {
                 if (board[k][j].GetValue() == 0) {
                     new_pos = k;
-                } else if (board[i][j].GetValue() == board[k][j].GetValue()  && !merged.count({k, j})) {
+                } else if (board[i][j].GetValue() == board[k][j].GetValue() && !merged.count({k, j})) {
                     board[k][j].SetValue(board[i][j].GetValue() + board[k][j].GetValue());
                     merged.insert({k, j});
                     board[i][j].SetValue(0);

@@ -1,4 +1,5 @@
 #pragma once
+
 #include <AppCore/AppCore.h>
 #include "Game.h"
 
@@ -16,7 +17,7 @@ public:
     // Start the run loop.
     virtual void Run();
 
-    bool OnKeyEvent(const ultralight::KeyEvent& evt) override;
+    bool OnKeyEvent(const ultralight::KeyEvent &evt) override;
 
     // This is called when the window is closing.
     void OnClose(ultralight::Window *window) override;
@@ -44,6 +45,7 @@ public:
                        const String &title) override;
 
     void UpdateTile(int i, int j, int32_t value, const String &color);
+
     void UpdateBoard();
 
 protected:

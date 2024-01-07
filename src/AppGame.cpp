@@ -141,8 +141,6 @@ void AppGame::OnChangeTitle(ultralight::View *caller,
     ///
     /// This is called whenever the page requests to change the title.
     ///
-    /// We update the main window's title here.
-    ///
     window_->SetTitle(title.utf8().data());
 }
 

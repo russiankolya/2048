@@ -10,7 +10,7 @@ public:
 
     ~Game();
 
-    Board& data();
+    Board &data();
 
     bool MoveLeft();
 
