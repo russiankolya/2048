@@ -58,12 +58,6 @@ void AppGame::Run() {
     app_->Run();
 }
 
-void AppGame::OnUpdate() {
-    ///
-    /// This is called repeatedly from the application's update loop.
-    ///
-}
-
 bool AppGame::OnKeyEvent(const ultralight::KeyEvent &evt) {
     if (evt.type == KeyEvent::kType_RawKeyDown) {
         std::string key = evt.key_identifier.utf8().data();
