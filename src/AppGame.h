@@ -19,6 +19,8 @@ public:
     // This is called continuously from the app's main loop.
     void OnUpdate() override;
 
+    bool OnKeyEvent(const ultralight::KeyEvent& evt) override;
+
     // This is called when the window is closing.
     void OnClose(ultralight::Window *window) override;
 
@@ -45,6 +47,7 @@ public:
                        const String &title) override;
 
     void UpdateTile(int i, int j, int32_t value, const String &color);
+    void UpdateBoard();
 
 protected:
     RefPtr<App> app_;

@@ -24,6 +24,10 @@ for (let i = 0; i < SIZE; i++) {
 
 function updateTile(i, j, value, color) {
     let tile = document.getElementById("tile" + i + j)
-    tile.innerHTML = String(value);
     tile.style.backgroundColor = color;
+    if (value === 0) {
+        tile.innerHTML = "";
+    } else {
+        tile.innerHTML = String(value);
+    }
 }

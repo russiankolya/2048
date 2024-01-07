@@ -1,4 +1,5 @@
 #include "AppGame.h"
+#include <iostream>
 
 #define WINDOW_WIDTH  400
 #define WINDOW_HEIGHT 400
@@ -61,13 +62,14 @@ void AppGame::OnUpdate() {
     ///
     /// This is called repeatedly from the application's update loop.
     ///
-    for (size_t i = 0; i < game.data().size(); i++) {
-        for (size_t j = 0; j < game.data().size(); j++) {
-            if (game.data()[i][j].GetValue() != 0) {
-                UpdateTile(static_cast<int>(i), static_cast<int>(j), game.data()[i][j].GetValue(),
-                           game.data()[i][j].GetColor());
-            }
+}
+
+bool AppGame::OnKeyEvent(const ultralight::KeyEvent &evt) {
+    if (evt.type == KeyEvent::kType_KeyUp) {
+        if (game.MoveUp()) {
+            game.GenerateTile();
         }
+        UpdateBoard();
     }
 }
 
@@ -107,6 +109,9 @@ void AppGame::OnDOMReady(ultralight::View *caller,
     JSObject global = JSGlobalObject();
 
     updateTile = global["updateTile"];
+
+    game.GenerateTile();
+    UpdateBoard();
 }
 
 void AppGame::OnChangeCursor(ultralight::View *caller,
@@ -131,4 +136,13 @@ void AppGame::OnChangeTitle(ultralight::View *caller,
 
 void AppGame::UpdateTile(int i, int j, int32_t value, const String &color) {
     updateTile({i, j, value, color});
+}
+
+void AppGame::UpdateBoard() {
+    for (size_t i = 0; i < game.data().size(); i++) {
+        for (size_t j = 0; j < game.data().size(); j++) {
+            UpdateTile(static_cast<int>(i), static_cast<int>(j), game.data()[i][j].GetValue(),
+                       game.data()[i][j].GetColor());
+        }
+    }
 }

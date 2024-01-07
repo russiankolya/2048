@@ -2,6 +2,7 @@
 
 #include "Tile.h"
 #include "Board.h"
+#include "Random.h"
 
 class Game {
 public:
@@ -13,14 +14,17 @@ public:
 
     Board data() const;
 
-    void MoveLeft();
+    bool MoveLeft();
 
-    void MoveUp();
+    bool MoveUp();
 
-    void MoveRight();
+    bool MoveRight();
 
-    void MoveDown();
+    bool MoveDown();
+
+    void GenerateTile();
 
 private:
-    Board board;
+    Board board{};
+    Random random{};
 };

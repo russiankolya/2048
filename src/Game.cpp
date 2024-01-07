@@ -12,7 +12,8 @@ Board Game::data() const {
     return board;
 }
 
-void Game::MoveUp() {
+bool Game::MoveUp() {
+    bool is_moved = false;
     for (size_t i = 0; i < board.size(); i++) {
         for (size_t j = 0; j < board.size(); j++) {
             if (board[i][j].GetValue() == 0) {
@@ -33,9 +34,11 @@ void Game::MoveUp() {
                 }
             }
             if (is_merged) {
+                is_moved = true;
                 continue;
             }
             if (i != new_pos) {
+                is_moved = true;
                 board[new_pos][j].SetValue(board[i][j].GetValue());
                 board[new_pos][j].SetColor("white");
                 board[i][j].SetValue(0);
@@ -43,4 +46,9 @@ void Game::MoveUp() {
             }
         }
     }
+    return is_moved;
+}
+
+void Game::GenerateTile() {
+    random.FillRandomTile(board);
 }
