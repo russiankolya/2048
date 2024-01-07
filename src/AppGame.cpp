@@ -1,5 +1,5 @@
 #include "AppGame.h"
-#include <iostream>
+#include <string>
 
 #define WINDOW_WIDTH  400
 #define WINDOW_HEIGHT 400
@@ -65,9 +65,27 @@ void AppGame::OnUpdate() {
 }
 
 bool AppGame::OnKeyEvent(const ultralight::KeyEvent &evt) {
-    if (evt.type == KeyEvent::kType_KeyUp) {
-        if (game.MoveUp()) {
-            game.GenerateTile();
+    if (evt.type == KeyEvent::kType_RawKeyDown) {
+        std::string key = evt.key_identifier.utf8().data();
+        if (key == "Left") {
+            if (game.MoveLeft()) {
+                game.GenerateTile();
+            }
+        }
+        if (key == "Up") {
+            if (game.MoveUp()) {
+                game.GenerateTile();
+            }
+        }
+        if (key == "Right") {
+            if (game.MoveRight()) {
+                game.GenerateTile();
+            }
+        }
+        if (key == "Down") {
+            if (game.MoveDown()) {
+                game.GenerateTile();
+            }
         }
         UpdateBoard();
     }
