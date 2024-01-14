@@ -12,7 +12,9 @@ static std::map<int, String> color_by_value = {{0,    "#ffffff"},
                                                {256,  "#f486c0"},
                                                {512,  "#f99d9b"},
                                                {1024, "#fdb16b"},
-                                               {2048, "#000000"}};
+                                               {2048, "#ee804d"},
+                                               {4096, "#e75e38"},
+                                               {8192, "#df2613"}};
 
 Tile::Tile() = default;
 
